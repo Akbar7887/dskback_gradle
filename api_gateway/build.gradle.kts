@@ -2,11 +2,12 @@ plugins {
     java
     id("org.springframework.boot") version "2.7.8"
     id("io.spring.dependency-management") version "1.0.5.RELEASE"
+
 }
 
 group = "uz.dsk"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 
 repositories {
@@ -24,7 +25,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     implementation("org.springframework.security:spring-security-config")
-    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.boot:spring-boot-starter-security:2.7.8")
     testImplementation("org.springframework.security:spring-security-test")
     implementation("io.jsonwebtoken:jjwt-api:0.10.2")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
@@ -45,4 +46,5 @@ dependencyManagement {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+
 }

@@ -1,4 +1,4 @@
-package uz.dsk.api_gateway.models.auth;
+package uz.dsk.api_gateway.resource;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -10,6 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import uz.dsk.api_gateway.models.AppUser;
+import uz.dsk.api_gateway.models.Role;
+import uz.dsk.api_gateway.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

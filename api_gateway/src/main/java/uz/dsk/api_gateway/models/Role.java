@@ -1,12 +1,9 @@
-package uz.dsk.api_gateway.models.auth;
-
-import lombok.Data;
+package uz.dsk.api_gateway.models;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-@Data
 public class Role {
 
     @Id
@@ -37,4 +34,6 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
