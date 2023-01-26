@@ -1,0 +1,35 @@
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: backweb
+          uri: http://localhost:8088
+          predicates:
+            - Path=/api/**
+        - id: docflow
+          uri: http://localhost:8087
+          predicates:
+            - Path=/api/doc/**
+#        - id: secondserver
+#          uri: lb://secondserver
+#          predicates:
+#            - Path=/pai/**
+#        - id: backendweb
+#          uri: lb://backendweb
+#          predicates:
+#            - Path=/backweb/**
+#        - id: consumerModule
+#          uri: lb://SECOND-SERVICE
+#          predicates:
+#            - Path=/consumer/**
