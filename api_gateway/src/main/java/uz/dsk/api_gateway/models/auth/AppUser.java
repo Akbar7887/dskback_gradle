@@ -1,11 +1,8 @@
-package uz.backweb.models.auth;
-
-import uz.backweb.models.Orderb;
+package uz.dsk.api_gateway.models.auth;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table
@@ -31,7 +28,7 @@ public class AppUser {
     private Collection<Role> roles = new ArrayList<>();
 
 
-    public AppUser(Long id, String name, String username, String phone, String adress, String password, Collection<Role> roles, List<Orderb> orderList) {
+    public AppUser(Long id, String name, String username, String phone, String adress, String password, Collection<Role> roles) {
         this.id = id;
         this.name = name;
         this.username = username;

@@ -1,4 +1,4 @@
-package uz.backweb.sevice;
+package uz.dsk.api_gateway.models.auth;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,10 +8,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import uz.backweb.models.auth.AppUser;
-import uz.backweb.models.auth.Role;
-import uz.backweb.repo.RoleRepository;
-import uz.backweb.repo.UserRepository;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -32,10 +28,10 @@ public class UserServiceIml implements UserService, UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser appUser = userRepository.findByUsername(username);
         if (appUser == null) {
-            log.error("User not found in the database");
+//            log.error("User not found in the database");
             throw new UsernameNotFoundException("User not found in the database");
         } else {
-            log.info("User not found in the database", username);
+//            log.info("User not found in the database", username);
         }
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
         appUser.getRoles().forEach(role -> {
@@ -46,21 +42,21 @@ public class UserServiceIml implements UserService, UserDetailsService {
 
     @Override
     public AppUser saveUser(AppUser user) {
-        log.info("Saving new password to the datebase");
+//        log.info("Saving new password to the datebase");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
     @Override
     public Role saveRole(Role role) {
-        log.info("Saving new Role to the datebase", role.getName());
+//        log.info("Saving new Role to the datebase", role.getName());
         return roleRepository.save(role);
     }
 
     @Override
     public void addRoleToUser(String username, String rolename) {
 
-        log.info("Saving new user and role the datebase", username, rolename);
+//        log.info("Saving new user and role the datebase", username, rolename);
         AppUser user = userRepository.findByUsername(username);
         Role role = roleRepository.findByname(rolename);
         user.getRoles().add(role);
@@ -68,13 +64,13 @@ public class UserServiceIml implements UserService, UserDetailsService {
 
     @Override
     public AppUser getUser(String username) {
-        log.info("Fetching user{}", username);
+//        log.info("Fetching user{}", username);
         return userRepository.findByUsername(username);
     }
 
     @Override
     public List<AppUser> getUser() {
-        log.info("Fetching all user");
+//        log.info("Fetching all user");
         return userRepository.findAll();
     }
 

@@ -10,6 +10,15 @@ eureka:
 spring:
   application:
     name: api-gateway
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dsk
+    username: postgres
+    password: 123
+    jpa:
+      show-sql: false
+      hibernate.ddl-auto: update
+      database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+      properties.hibernate.temp.use_jdbc_metadata_defaults: false
   cloud:
     gateway:
       routes:

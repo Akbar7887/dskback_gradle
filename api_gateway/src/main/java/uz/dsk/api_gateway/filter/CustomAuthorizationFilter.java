@@ -1,4 +1,4 @@
-package uz.backweb.filter;
+package uz.dsk.api_gateway.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -32,7 +32,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        if (request.getServletPath().equals("/api/login")
+        if (request.getServletPath().equals("/login")
                 || request.getServletPath().equals("/api/token/refresh")
 //                || request.getServletPath().equals("/login/role/save")
 //                    || request.getServletPath().equals("/login/user/save")
@@ -58,7 +58,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
                     filterChain.doFilter(request, response);
                 } catch (Exception exception) {
 
-                    log.info("Error loging in {}", exception.getMessage());
+//                    log.info("Error loging in {}", exception.getMessage());
                     response.setHeader("error", exception.getMessage());
                     response.setStatus(FORBIDDEN.value());
 //                  response.sendError(FORBIDDEN.value());

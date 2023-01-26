@@ -1,4 +1,4 @@
-package uz.backweb.security;
+package uz.dsk.api_gateway.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +12,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import uz.backweb.filter.CustomAuthenticationFilter;
-import uz.backweb.filter.CustomAuthorizationFilter;
+import uz.dsk.api_gateway.filter.CustomAuthenticationFilter;
+import uz.dsk.api_gateway.filter.CustomAuthorizationFilter;
 
 import static org.springframework.http.HttpMethod.*;
 
@@ -22,6 +22,7 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
 
     private final UserDetailsService userDetailsService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -34,12 +35,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter((authenticationManagerBean()));
-        customAuthenticationFilter.setFilterProcessesUrl("/api/login");
+        customAuthenticationFilter.setFilterProcessesUrl("/login");
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers(
                 "/api/token/refresh/**",
-                "/api/login",
+                "/login",
                 "/meneger/get", "/meneger/download/meneger/*",
                 "/catalog/get",
                 "/imagecatalog/download/catalogs/*",

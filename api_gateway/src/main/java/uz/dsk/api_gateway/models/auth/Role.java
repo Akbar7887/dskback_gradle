@@ -1,13 +1,11 @@
-package uz.backweb.models.auth;
+package uz.dsk.api_gateway.models.auth;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table
 @Data
 public class Role {
 

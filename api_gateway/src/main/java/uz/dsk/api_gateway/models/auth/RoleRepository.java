@@ -1,9 +1,9 @@
-package uz.backweb.repo;
+package uz.dsk.api_gateway.models.auth;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.backweb.models.auth.Role;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
     Role findByname(String name);
 }

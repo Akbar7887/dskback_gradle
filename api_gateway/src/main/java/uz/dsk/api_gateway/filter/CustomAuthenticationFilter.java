@@ -1,4 +1,4 @@
-package uz.backweb.filter;
+package uz.dsk.api_gateway.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -39,8 +39,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        log.info("Username is {}", username);
-        log.info("Password is {}", password);
+//        log.info("Username is {}", username);
+//        log.info("Password is {}", password);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
         return authenticationManager.authenticate(authenticationToken);
 

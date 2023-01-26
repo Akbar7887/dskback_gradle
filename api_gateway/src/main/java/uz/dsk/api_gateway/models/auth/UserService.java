@@ -1,7 +1,4 @@
-package uz.backweb.sevice;
-
-import uz.backweb.models.auth.AppUser;
-import uz.backweb.models.auth.Role;
+package uz.dsk.api_gateway.models.auth;
 
 import java.util.List;
 

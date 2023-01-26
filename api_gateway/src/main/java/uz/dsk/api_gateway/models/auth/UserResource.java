@@ -1,4 +1,4 @@
-package uz.backweb.resource;
+package uz.dsk.api_gateway.models.auth;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -10,9 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import uz.backweb.models.auth.AppUser;
-import uz.backweb.models.auth.Role;
-import uz.backweb.sevice.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +26,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/login")
+@RequestMapping("/login")
 public class UserResource {
     private final UserService userService;
 //    private final UserServiceIml userServiceIml;
