@@ -28,6 +28,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.1.0")
 
+//    implementation("com.auth0:java-jwt:4.2.2")
+
 }
 dependencyManagement {
     imports {

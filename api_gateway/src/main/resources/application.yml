@@ -20,7 +20,7 @@ spring:
         - id: docflow
           uri: http://localhost:8087
           predicates:
-            - Path=/api/doc/**
+            - Path=/doc/**
 #        - id: secondserver
 #          uri: lb://secondserver
 #          predicates:
