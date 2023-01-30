@@ -1,12 +1,10 @@
 package uz.dsk.api_gateway.service;
 
-import org.springframework.stereotype.Service;
-import uz.dsk.api_gateway.models.AppUser;
-import uz.dsk.api_gateway.models.Role;
+import  uz.dsk.api_gateway.models.auth.AppUser;
+import  uz.dsk.api_gateway.models.auth.Role;
 
 import java.util.List;
 
-@Service
 public interface UserService {
 
     AppUser saveUser(AppUser user);

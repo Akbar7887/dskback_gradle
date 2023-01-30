@@ -15,6 +15,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import uz.dsk.api_gateway.filter.CustomAuthenticationFilter;
 import uz.dsk.api_gateway.filter.CustomAuthorizationFilter;
 
+import javax.inject.Inject;
+
 import static org.springframework.http.HttpMethod.*;
 
 
@@ -23,7 +25,9 @@ import static org.springframework.http.HttpMethod.*;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Inject
     private final UserDetailsService userDetailsService;
+
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override

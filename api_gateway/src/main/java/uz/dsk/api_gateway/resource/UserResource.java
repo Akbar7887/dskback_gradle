@@ -10,8 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import uz.dsk.api_gateway.models.AppUser;
-import uz.dsk.api_gateway.models.Role;
+import uz.dsk.api_gateway.models.auth.AppUser;
+import uz.dsk.api_gateway.models.auth.Role;
 import uz.dsk.api_gateway.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;

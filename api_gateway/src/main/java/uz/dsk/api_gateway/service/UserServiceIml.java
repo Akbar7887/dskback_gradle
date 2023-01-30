@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import uz.dsk.api_gateway.models.AppUser;
-import uz.dsk.api_gateway.models.Role;
-import uz.dsk.api_gateway.repo.RoleRepository;
-import uz.dsk.api_gateway.repo.UserRepository;
+import uz.dsk.api_gateway.models.auth.AppUser;
+import uz.dsk.api_gateway.models.auth.Role;
+import uz.dsk.api_gateway.repository.RoleRepository;
+import uz.dsk.api_gateway.repository.UserRepository;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -74,7 +74,7 @@ public class UserServiceIml implements UserService, UserDetailsService {
 
     @Override
     public List<AppUser> getUser() {
-//        log.info("Fetching all user");
+        log.info("Fetching all user");
         return userRepository.findAll();
     }
 

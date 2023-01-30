@@ -1,4 +1,4 @@
-package uz.dsk.api_gateway.models;
+package uz.dsk.api_gateway.models.auth;
 
 import javax.persistence.*;
 import java.util.ArrayList;

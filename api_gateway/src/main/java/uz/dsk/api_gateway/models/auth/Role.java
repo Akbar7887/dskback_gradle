@@ -1,9 +1,14 @@
-package uz.dsk.api_gateway.models;
+package uz.dsk.api_gateway.models.auth;
 
-import javax.persistence.*;
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table
+@Data
 public class Role {
 
     @Id
@@ -34,6 +39,4 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }
