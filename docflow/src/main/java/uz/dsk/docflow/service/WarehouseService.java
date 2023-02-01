@@ -15,15 +15,15 @@ public class WarehouseService {
 
     private final WarehouseRepository warehouseRepository;
 
-    private List<Warehouse> getAll() {
+    public List<Warehouse> getAll() {
         return warehouseRepository.findAll();
     }
 
-    private Warehouse save(Warehouse warehouse) {
+    public Warehouse save(Warehouse warehouse) {
         return warehouseRepository.save(warehouse);
     }
 
-    private void delete(Long id) {
+    public void delete(Long id) {
         warehouseRepository.deleteById(id);
     }
 
