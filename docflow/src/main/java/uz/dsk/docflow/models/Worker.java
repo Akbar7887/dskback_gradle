@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "department")
+@Table(name = "worker")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Department {
+public class Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,5 +22,11 @@ public class Department {
     @NonNull
     private String name;
 
+    @OneToOne()
+    private Position position;
+
+    private String phone;
+
+    private Date datestart;
 
 }
