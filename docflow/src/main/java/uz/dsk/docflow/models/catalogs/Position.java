@@ -1,5 +1,4 @@
-package uz.dsk.docflow.models;
-
+package uz.dsk.docflow.models.catalogs;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,11 +8,11 @@ import lombok.NonNull;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "warehouse")
+@Table(name = "position")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Warehouse {
+public class Position {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +20,5 @@ public class Warehouse {
 
     @NonNull
     private String name;
-
 
 }

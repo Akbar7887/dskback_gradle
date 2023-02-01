@@ -1,10 +1,10 @@
-package uz.dsk.docflow.service;
+package uz.dsk.docflow.service.catalogs;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uz.dsk.docflow.models.Warehouse;
-import uz.dsk.docflow.repository.WarehouseRepository;
+import uz.dsk.docflow.models.catalogs.Warehouse;
+import uz.dsk.docflow.repository.catalogs.WarehouseRepository;
 
 import java.util.List;
 

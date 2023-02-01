@@ -1,4 +1,5 @@
-package uz.dsk.docflow.models;
+package uz.dsk.docflow.models.catalogs;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,14 +7,13 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "worker")
+@Table(name = "warehouse")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Worker {
+public class Warehouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,5 @@ public class Worker {
     @NonNull
     private String name;
 
-    @OneToOne()
-    private Position position;
-
-    private String phone;
-
-    private Date datestart;
 
 }

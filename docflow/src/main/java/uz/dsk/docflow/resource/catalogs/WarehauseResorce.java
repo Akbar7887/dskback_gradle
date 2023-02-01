@@ -1,10 +1,10 @@
-package uz.dsk.docflow.resource;
+package uz.dsk.docflow.resource.catalogs;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.dsk.docflow.models.Warehouse;
-import uz.dsk.docflow.service.WarehouseService;
+import uz.dsk.docflow.models.catalogs.Warehouse;
+import uz.dsk.docflow.service.catalogs.WarehouseService;
 
 import java.util.List;
 
