@@ -46,5 +46,9 @@ dependencyManagement {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-
+}
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "uz.dsk.api_gateway.Main"
+    }
 }

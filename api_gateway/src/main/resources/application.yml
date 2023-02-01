@@ -19,6 +19,14 @@ spring:
       hibernate.ddl-auto: update
       database-platform: org.hibernate.dialect.PostgreSQL9Dialect
       properties.hibernate.temp.use_jdbc_metadata_defaults: false
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  security:
+    enable-csrf: true
+
+#  security:
+#    enable-csrf: false
   cloud:
     gateway:
       routes:
