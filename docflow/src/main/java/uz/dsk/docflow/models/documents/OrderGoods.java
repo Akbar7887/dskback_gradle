@@ -39,13 +39,26 @@ public class OrderGoods {
     @OneToOne()
     private Warehouse warehouse;
 
-    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order",
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.PERSIST,
+                    CascadeType.REMOVE,
+                    CascadeType.REFRESH,
+                    CascadeType.MERGE})
     @JsonManagedReference
     private List<ItemOreder> itemOrederList;
 
     @Enumerated(EnumType.STRING)
     private ACTIVE active = ACTIVE.ACTIVE;
 
+
+    public void addItem(ItemOreder itemOreder) {
+        if (!this.itemOrederList.contains(itemOreder)) {
+            this.itemOrederList.add(itemOreder);
+            itemOreder.setOrder(this);
+        }
+    }
 
 
 }
