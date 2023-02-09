@@ -38,10 +38,10 @@ public class OrderGoodsService {
     }
 
     public OrderGoods addItem(Long id, ItemOreder itemOreder) {
-        ItemOreder itemOreder1 = itemOrederRepository.save(itemOreder);
+//        ItemOreder itemOreder1 = itemOrederRepository.save(itemOreder);
         Optional<OrderGoods> orderGoodsOptional = orderGoodsRepository.findById(id);
         OrderGoods orderGoods1 = orderGoodsOptional.get();
-        orderGoods1.addItem(itemOreder1);
+        orderGoods1.addItem(itemOreder);
         orderGoodsRepository.save(orderGoods1);
 
 

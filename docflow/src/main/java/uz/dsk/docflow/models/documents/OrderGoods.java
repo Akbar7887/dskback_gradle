@@ -40,12 +40,7 @@ public class OrderGoods {
     private Warehouse warehouse;
 
     @OneToMany(mappedBy = "order",
-            fetch = FetchType.EAGER,
-            cascade = {CascadeType.DETACH,
-                    CascadeType.PERSIST,
-                    CascadeType.REMOVE,
-                    CascadeType.REFRESH,
-                    CascadeType.MERGE})
+            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<ItemOreder> itemOrederList;
 

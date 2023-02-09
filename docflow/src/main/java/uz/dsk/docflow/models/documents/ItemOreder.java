@@ -22,7 +22,7 @@ public class ItemOreder {
 
     private double quantity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     @JsonBackReference
     private OrderGoods order;

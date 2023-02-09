@@ -35,7 +35,7 @@ public class OrderGoodsResource {
     }
 
     @PostMapping("additem")
-    private ResponseEntity<OrderGoods> addItem(@RequestParam("order_id") String order_id, @RequestBody ItemOreder itemOreder) {
+    public ResponseEntity<OrderGoods> addItem(@RequestParam("order_id") String order_id, @RequestBody ItemOreder itemOreder) {
         return ResponseEntity.ok().body(orderGoodsService.addItem(Long.parseLong(order_id), itemOreder));
     }
 
