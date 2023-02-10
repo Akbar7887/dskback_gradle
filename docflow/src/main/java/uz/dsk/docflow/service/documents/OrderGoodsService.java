@@ -44,7 +44,10 @@ public class OrderGoodsService {
         orderGoods1.addItem(itemOreder);
         orderGoodsRepository.save(orderGoods1);
 
-
         return orderGoods1;
+    }
+
+    public ItemOreder editItem(ItemOreder itemOreder){
+       return  itemOrederRepository.save(itemOreder);
     }
 }

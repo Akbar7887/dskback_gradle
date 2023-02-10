@@ -39,5 +39,9 @@ public class OrderGoodsResource {
         return ResponseEntity.ok().body(orderGoodsService.addItem(Long.parseLong(order_id), itemOreder));
     }
 
+    @PutMapping("edititem")
+    public ResponseEntity<ItemOreder> editItem(@RequestBody ItemOreder itemOreder){
+        return ResponseEntity.ok().body(orderGoodsService.editItem(itemOreder));
+    }
 
 }
