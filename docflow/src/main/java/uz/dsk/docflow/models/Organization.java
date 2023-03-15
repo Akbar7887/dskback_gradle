@@ -1,20 +1,19 @@
-package uz.dsk.docflow.models.catalogs;
+package uz.dsk.docflow.models;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "worker")
+@Table(name = "organization")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Worker {
+public class Organization {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,12 +21,15 @@ public class Worker {
 
     @NonNull
     private String name;
+    private String region;
+    private String adress;
+    private String telephon;
+    private String email;
+    private String telegram;
+    private String instagram;
+    private String facebook;
 
-    @OneToOne()
-    private Position position;
 
-    private String phone;
 
-    private Date datestart;
 
 }

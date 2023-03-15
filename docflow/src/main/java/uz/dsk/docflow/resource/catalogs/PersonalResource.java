@@ -3,25 +3,25 @@ package uz.dsk.docflow.resource.catalogs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.dsk.docflow.models.catalogs.Worker;
-import uz.dsk.docflow.service.catalogs.WorkerService;
+import uz.dsk.docflow.models.catalogs.Personal;
+import uz.dsk.docflow.service.catalogs.PersonalService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/doc/worker/")
+@RequestMapping("/doc/personal/")
 @RequiredArgsConstructor
-public class WorkerResource {
+public class PersonalResource {
 
-    private final WorkerService workerService;
+    private final PersonalService workerService;
 
     @GetMapping("get")
-    private ResponseEntity<List<Worker>> getAll(){
+    private ResponseEntity<List<Personal>> getAll(){
         return ResponseEntity.ok().body(workerService.getAll());
     }
 
     @PostMapping("save")
-    private ResponseEntity<Worker> save(@RequestBody  Worker worker){
+    private ResponseEntity<Personal> save(@RequestBody Personal worker){
         return ResponseEntity.ok().body(workerService.save(worker));
     }
 

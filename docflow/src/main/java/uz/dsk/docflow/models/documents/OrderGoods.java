@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import uz.dsk.docflow.models.catalogs.Warehouse;
-import uz.dsk.docflow.models.catalogs.Worker;
+import uz.dsk.docflow.models.catalogs.Personal;
 import uz.dsk.docflow.models.others.ACTIVE;
 
 import javax.persistence.*;
@@ -26,10 +26,10 @@ public class OrderGoods {
     private Long id;
 
     @CreationTimestamp
-    private Date datecreat;
+    private Date datecreate;
 
     @OneToOne()
-    private Worker worker;
+    private Personal worker;
 
     private boolean edit = false;
 
@@ -42,15 +42,15 @@ public class OrderGoods {
     @OneToMany(mappedBy = "order",
             fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<ItemOreder> itemOrederList;
+    private List<ItemOreder> itemOreders;
 
     @Enumerated(EnumType.STRING)
     private ACTIVE active = ACTIVE.ACTIVE;
 
 
     public void addItem(ItemOreder itemOreder) {
-        if (!this.itemOrederList.contains(itemOreder)) {
-            this.itemOrederList.add(itemOreder);
+        if (!this.itemOreders.contains(itemOreder)) {
+            this.itemOreders.add(itemOreder);
             itemOreder.setOrder(this);
         }
     }

@@ -3,23 +3,23 @@ package uz.dsk.docflow.service.catalogs;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import uz.dsk.docflow.models.catalogs.Worker;
-import uz.dsk.docflow.repository.catalogs.WorkerRepository;
+import uz.dsk.docflow.models.catalogs.Personal;
+import uz.dsk.docflow.repository.catalogs.PersonalRepository;
 
 import java.util.List;
 
 @Service
 @Transactional
 @AllArgsConstructor
-public class WorkerService {
+public class PersonalService {
 
-    private final WorkerRepository workerRepository;
+    private final PersonalRepository workerRepository;
 
-    public List<Worker> getAll(){
+    public List<Personal> getAll(){
         return workerRepository.findAll();
     }
 
-    public Worker save(Worker worker){
+    public Personal save(Personal worker){
         return workerRepository.save(worker);
     }
 
