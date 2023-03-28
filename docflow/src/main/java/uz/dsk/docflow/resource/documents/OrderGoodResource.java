@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.dsk.docflow.models.documents.ItemOrder;
 import uz.dsk.docflow.models.documents.OrderGood;
 import uz.dsk.docflow.service.documents.OrderGoodService;
 
@@ -34,14 +33,14 @@ public class OrderGoodResource {
         return ResponseEntity.ok().body(orderGoodsService.delete(Long.parseLong(id)));
     }
 
-    @PostMapping("additem")
-    public ResponseEntity<List<ItemOrder>> addItem(@RequestParam("order_id") String order_id, @RequestBody List<ItemOrder> itemOrder) {
-        return ResponseEntity.ok().body(orderGoodsService.addItem(Long.parseLong(order_id), itemOrder));
-    }
-
-    @PutMapping("edititem")
-    public ResponseEntity<ItemOrder> editItem(@RequestBody ItemOrder itemOrder){
-        return ResponseEntity.ok().body(orderGoodsService.editItem(itemOrder));
-    }
+//    @PostMapping("additem")
+//    public ResponseEntity<List<ItemOrder>> addItem(@RequestParam("order_id") String order_id, @RequestBody List<ItemOrder> itemOrder) {
+//        return ResponseEntity.ok().body(orderGoodsService.addItem(Long.parseLong(order_id), itemOrder));
+//    }
+//
+//    @PutMapping("edititem")
+//    public ResponseEntity<ItemOrder> editItem(@RequestBody ItemOrder itemOrder){
+//        return ResponseEntity.ok().body(orderGoodsService.editItem(itemOrder));
+//    }
 
 }
