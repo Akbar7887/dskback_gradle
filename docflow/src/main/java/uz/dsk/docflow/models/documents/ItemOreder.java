@@ -25,6 +25,6 @@ public class ItemOreder {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     @JsonBackReference
-    private OrderGoods order;
+    private OrderGood order;
 
 }

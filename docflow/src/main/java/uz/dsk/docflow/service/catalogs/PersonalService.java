@@ -13,17 +13,17 @@ import java.util.List;
 @AllArgsConstructor
 public class PersonalService {
 
-    private final PersonalRepository workerRepository;
+    private final PersonalRepository personalRepository;
 
     public List<Personal> getAll(){
-        return workerRepository.findAll();
+        return personalRepository.findAll();
     }
 
     public Personal save(Personal worker){
-        return workerRepository.save(worker);
+        return personalRepository.save(worker);
     }
 
     public void delete(Long id){
-        workerRepository.deleteById(id);
+        personalRepository.deleteById(id);
     }
 }

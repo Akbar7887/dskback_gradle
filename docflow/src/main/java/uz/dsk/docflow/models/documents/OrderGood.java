@@ -14,11 +14,11 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "ordergoods")
+@Table(name = "ordergood")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderGoods {
+public class OrderGood {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_id")
@@ -40,7 +40,8 @@ public class OrderGoods {
     private Warehouse warehouse;
 
     @OneToMany(mappedBy = "order",
-            fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<ItemOreder> itemOreders;
 

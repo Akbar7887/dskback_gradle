@@ -13,21 +13,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PersonalResource {
 
-    private final PersonalService workerService;
+    private final PersonalService personalService;
 
     @GetMapping("get")
     private ResponseEntity<List<Personal>> getAll(){
-        return ResponseEntity.ok().body(workerService.getAll());
+        return ResponseEntity.ok().body(personalService.getAll());
     }
 
     @PostMapping("save")
     private ResponseEntity<Personal> save(@RequestBody Personal worker){
-        return ResponseEntity.ok().body(workerService.save(worker));
+        return ResponseEntity.ok().body(personalService.save(worker));
     }
 
     @DeleteMapping("delete")
     private void delete(@RequestParam Long id){
-        workerService.delete(id);
+        personalService.delete(id);
     }
 
 }
