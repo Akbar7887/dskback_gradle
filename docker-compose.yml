@@ -22,6 +22,32 @@ services:
       - dskbinikorback
     volumes:
       - uploads:/var/lib/uploads
+  eureka:
+    container_name: eureke_service
+    image: docflow
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - api_gateway
+    ports:
+      - 8761:8761
+    networks:
+      - dskbinikorback
+  apigateway:
+    container_name: api_gateway
+    image: docflow
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - docflow_jar
+    ports:
+      - 8761:8761
+    networks:
+      - dskbinikorback
   postgressqldb:
     container_name: postgres
     image: postgres:14-alpine
