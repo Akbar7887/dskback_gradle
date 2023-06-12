@@ -2,7 +2,7 @@ FROM openjdk:17
 EXPOSE 8089
 
 
-COPY docflow/build/libs/docflow-0.0.1-SNAPSHOT-plain.jar.jar docflow.jar
+COPY docflow/build/libs/docflow-0.0.1-SNAPSHOT-plain.jar docflow.jar
 #ADD target/dskbinokor.jar dskbinokor.jar
 #ADD entrypoint.sh entrypoint.sh
 
