@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - api_gateway
+      - apigateway
     ports:
       - 8761:8761
     networks:
@@ -43,7 +43,7 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - docflow_jar
+      - app
     ports:
       - 8761:8761
     networks:
