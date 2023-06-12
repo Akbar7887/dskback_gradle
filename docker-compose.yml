@@ -7,7 +7,7 @@ services:
     restart: always
     build:
       context: .
-#      dockerfile: Dockerfile
+      dockerfile: ../dskback_gradle/docflow/Dockerfile
     depends_on:
       - postgressqldb
     ports:
@@ -28,7 +28,7 @@ services:
     restart: always
     build:
       context: .
-#      dockerfile: Dockerfile
+      dockerfile: ../dskback_gradle/eureka_service/Dockerfile
     depends_on:
       - apigateway
     ports:
@@ -41,7 +41,7 @@ services:
     restart: always
     build:
       context: .
-#      dockerfile: Dockerfile
+      dockerfile: ../dskback_gradle/api_gateway/Dockerfile
     depends_on:
       - app
     ports:
