@@ -3,7 +3,7 @@ version: "3.1"
 services:
   app:
     container_name: docflow_jar
-    image: dskbinokor
+    image: docflow
     restart: always
     build:
       context: .
