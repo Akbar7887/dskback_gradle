@@ -45,7 +45,7 @@ services:
     depends_on:
       - app
     ports:
-      - 8761:8761
+      - 8083:8083
     networks:
       - dskbinikorback
   postgressqldb:
